@@ -53,6 +53,17 @@ console.log(roll * 4 + 1);
 
 //#endregion
 
+//#region 11b.Exercise
+const userName = prompt("Hi, what's your name?");
+let userChoice;
+while (userChoice !== "cat" && userChoice !== "dog")
+{
+    userChoice = prompt(`Ok ${userName}, are you more of a cat person or a dog person? Please, write only "cat" or "dog"`).trim().toLowerCase();
+}
+alert(userChoice === "cat" ? "Yay! Cats are awesome!" : "I guess dogs are ok too.");
+
+
+//#endregion
 
 //#region MyPersonalLaboratory
 // console.log("a is " + a);
@@ -89,6 +100,9 @@ console.log(roll * 4 + 1);
 // console.log(parseInt("3.84"));
 // let x = toString(42);
 // console.log(typeof x);
-console.log(5e-4);
+// console.log(5e-4);
+// console.log(!!0);
+
+
 
 //#endregion
