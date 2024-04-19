@@ -11,28 +11,28 @@
 //#endregion
 
 //#region 06b.Practice
-// DON'T TOUCH THIS LINE!
-const message = "    TASTE THE RAINBOW!  "; //DON'T CHANGE THIS LINE PLEASE!
+// // DON'T TOUCH THIS LINE!
+// const message = "    TASTE THE RAINBOW!  "; //DON'T CHANGE THIS LINE PLEASE!
 
-// YOUR CODE BELOW THIS LINE:
-let whisper = message.trim().toLowerCase();
-console.log(whisper);
-console.log(whisper.charAt(whisper.length - 1));
+// // YOUR CODE BELOW THIS LINE:
+// let whisper = message.trim().toLowerCase();
+// console.log(whisper);
+// console.log(whisper.charAt(whisper.length - 1));
 
 
-// DON'T TOUCH THIS LINE! (please)
-const word = "skateboard"; //Don't change this line!
+// // DON'T TOUCH THIS LINE! (please)
+// const word = "skateboard"; //Don't change this line!
 
-// YOUR CODE BELOW THIS LINE:
-const indexOfBoard = word.indexOf("board");
-const facialHair = word.slice(indexOfBoard, word.length).replace("o", "e");
-console.log(facialHair);
+// // YOUR CODE BELOW THIS LINE:
+// const indexOfBoard = word.indexOf("board");
+// const facialHair = word.slice(indexOfBoard, word.length).replace("o", "e");
+// console.log(facialHair);
 //#endregion
 
 //#region 07.Numbers
-let roll = Math.random();
-console.log(Math.floor(roll * 11));
-console.log(roll * 4 + 1);
+// let roll = Math.random();
+// console.log(Math.floor(roll * 11));
+// console.log(roll * 4 + 1);
 //#endregion
 
 //#region 08.Practice
@@ -54,13 +54,66 @@ console.log(roll * 4 + 1);
 //#endregion
 
 //#region 11b.Exercise
-const userName = prompt("Hi, what's your name?");
-let userChoice;
-while (userChoice !== "cat" && userChoice !== "dog")
-{
-    userChoice = prompt(`Ok ${userName}, are you more of a cat person or a dog person? Please, write only "cat" or "dog"`).trim().toLowerCase();
-}
-alert(userChoice === "cat" ? "Yay! Cats are awesome!" : "I guess dogs are ok too.");
+// const userName = prompt("Hi, what's your name?");
+// let userChoice;
+// while (userChoice !== "cat" && userChoice !== "dog")
+// {
+//     userChoice = prompt(`Ok ${userName}, are you more of a cat person or a dog person? Please, write only "cat" or "dog"`).trim().toLowerCase();
+// }
+// alert(userChoice === "cat" ? "Yay! Cats are awesome!" : "I guess dogs are ok too.");
+
+
+// const mystery = "P7____"; //CHANGE THIS VALUE TO MAKE THE CONDITIONAL BELOW TRUE
+
+// // LEAVE THIS CODE ALONE! (pretty please)
+// if (mystery[0] === "P" && mystery.length > 5 && mystery.indexOf("7") !== -1) {
+//   console.log("YOU GOT IT!!!");
+// } else {
+//   console.log("TRY AGAIN");
+// }
+
+// let age = prompt("How old are you?");
+// if (age < 18)
+// {
+//     alert("Sorry, you are too young to drive this car. Powering off");
+// }
+// else if (age == 18)
+// {
+//     alert("Congratulations on your first year of driving. Enjoy the ride!");
+// }
+// else
+// {
+//     alert("Powering On. Enjoy the ride!");
+// }
+
+// let userFavoriteFruit = prompt("What is your favorite fruit?").toLowerCase();
+// switch (userFavoriteFruit)
+// {
+//     case "bananas":
+//         alert("I like bananas as well.")
+//         break;
+//     case "strawberry":
+//         alert("I LOVE strawberries!!");
+//         break;
+//     case "grape":
+//         let userFavoriteGrape = prompt("What are your favorite grapes? Purple or green?").toLowerCase();
+//         if (userFavoriteGrape === "purple")
+//         {
+//             alert("Oh no... I don't like purple grapes :x");
+//         }
+//         else if (userFavoriteGrape === "green")
+//         {
+//             alert("Green grapes are ok...");
+//         }
+//         else
+//         {
+//             alert("I don't understand.");
+//         }
+//         break;
+//     default:
+//         alert(`I don't understand the word ${userFavoriteFruit}`)
+// }
+
 
 
 //#endregion
