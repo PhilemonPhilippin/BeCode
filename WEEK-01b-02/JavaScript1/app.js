@@ -278,7 +278,40 @@
 // }
 //#endregion
 
-
+//#region 20
+// let userMenuChoice = '';
+// let toDos = [];
+// while (userMenuChoice !== 'quit')
+// {
+//     do
+//     {
+//         userMenuChoice = prompt("Choose one option for the to-do : new | list | delete | quit .").trim().toLowerCase();
+//     } while (userMenuChoice !== "new" && userMenuChoice !== "list" && userMenuChoice !== "delete" && userMenuChoice !== "quit");
+//     switch (userMenuChoice)
+//     {
+//         case "new":
+//             let newToDo = prompt("Which new to-do do you want to add?");
+//             toDos.push(newToDo);
+//             console.log(`The new to-do '${newToDo}' was added to the list.`);
+//             break;
+//         case "list":
+//             for (let i = 0; i < toDos.length; i++)
+//             {
+//                 console.log(`${i + 1} : ${toDos[i]}`);
+//             }
+//             break;
+//         case "delete":
+//             let toDoToDelete;
+//             do
+//             {
+//                 toDoToDelete = parseInt(prompt("Which to-do do you want to delete?"));
+//             } while (toDoToDelete < 1 || toDoToDelete > toDos.length);
+//             let toDoDeleted = toDos.splice(toDoToDelete - 1, 1)
+//             console.log(`The to-do '${toDoDeleted}' was deleted.`);
+//             break;
+//     }
+// }
+//#endregion
 
 //#region MyPersonalLaboratory
 // console.log("a is " + a);
