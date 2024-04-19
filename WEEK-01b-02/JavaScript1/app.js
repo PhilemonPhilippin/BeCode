@@ -118,6 +118,38 @@
 
 //#endregion
 
+//#region 12b. Exercises
+
+// const leaderboard = ["Harry", "Lua", "Hermione", "Bellatrix"]; //DON'T TOUCH THIS LINE!
+// // YOUR CODE BELOW HERE:
+// leaderboard[1] = "Luna";
+// leaderboard[leaderboard.length - 1] = "Draco";
+// console.log(leaderboard);
+
+// const initialArray = [
+//     null,
+//     true,
+//     ["Apple", "two", undefined],
+//     false,
+//     ["three", "BeCode"],
+//     4,
+//     "I am a big bad wolf",
+//     ["one"],
+// ];
+
+// let finalArray = [ initialArray[7][0], initialArray[2][1], initialArray[4][0] ];
+// console.log(finalArray);
+
+// const planets = ["The Moon", "Venus", "Earth", "Mars", "Jupiter"]; //DO NOT TOUCH THIS LINE!
+
+// // YOUR CODE GOES BELOW THIS LINE:
+// planets.shift();
+// planets.push("Saturn");
+// planets.unshift("Mercury");
+// console.log(planets);
+//#endregion
+
+
 //#region MyPersonalLaboratory
 // console.log("a is " + a);
 // console.log("b is " + b);
@@ -155,6 +187,56 @@
 // console.log(typeof x);
 // console.log(5e-4);
 // console.log(!!0);
+// let myArray = [0, 1, 2];
+// myArray[3] = 3;
+// myArray[6] = 6;
+// console.log(myArray);
+// console.log(myArray[4]);
+// arr = ["Apple", "Orange", "Kiwi", "Bananas", "Grapes"];
+// console.log(arr.slice(1, 4));
+// let arr = [1, 2, 3, 4, 5];
+// let deletedData = arr.splice(2, 2, "test");
+// console.log(arr);
+// console.log(deletedData);
+// let arr = [5, 3, 8, 1, 100];
+// arr.sort();
+// console.log(arr);
+// arr = [1,2,2,2,1]
+// let aggregate = arr.reduce((accumulator, currentVal) => {
+//     return accumulator * currentVal
+// }, 1);
+// console.log(aggregate);
+// let numbers = [1, 5, 1, 5, 2];
+// let isThereOneEven = numbers.some(
+//     (x) => x % 2 === 0
+// );
+// console.log(isThereOneEven);
+// let areThereOnlyOdd = numbers.every(
+//     (x) => x % 2 !== 0
+// );
+// console.log(areThereOnlyOdd);
+// let theFirstGreaterThan1 = numbers.find(
+//     (x) => x > 1
+// );
+// console.log(theFirstGreaterThan1);
+// let filtered = numbers.filter(
+//     (x) => x > 2
+// );
+// console.log(filtered)
+// let plus2 = numbers.map(
+//     (x) => x + 2
+// );
+// console.log(plus2);
+// let includes3 = numbers.includes(3);
+// console.log(includes3);
+// let myArray = ["Pomme", "Poire", "Orange", "Raisin"];
+// let myString = myArray.join(" + ");
+// console.log(myString);
+// myArray.reverse();
+// console.log(myArray);
+// let mySlice = myArray.slice(1, 3);
+// console.log(mySlice);
+
 
 
 
