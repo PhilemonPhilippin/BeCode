@@ -149,6 +149,136 @@
 // console.log(planets);
 //#endregion
 
+//#region 13
+// let product = {
+//     name: "iPhone 15",
+//     inStock: true,
+//     price: 1249.90,
+//     includedInPackage: ["case", "earphones", "charger"]
+// }
+// console.log(product.includedInPackage[1]);
+
+// //PLEASE DON'T TOUCH THIS LINE!
+// const restaurant = {
+//     name: "Ichiran Ramen",
+//     address: `${Math.floor(Math.random() * 100) + 1} Johnson Ave`,
+//     city: "Brooklyn",
+//     state: "NY",
+//     zipcode: "11206",
+// };
+// //YOUR CODE GOES DOWN HERE:
+// let fullAddress = `${restaurant.address}, ${restaurant.city}, ${restaurant.state} ${restaurant.zipcode}`;
+// console.log(fullAddress);
+//#endregion
+
+//#region 16
+
+// for (let i = 2; i <= 20; i = i+2)
+// {
+//     console.log(i);
+// }
+// for (let i = 1; i < 20; i = i + 2) {
+//     console.log(i);
+// }
+// for (let i = 100; i > 0; i = i - 10)
+// {
+//     console.log(i);
+// }
+// for (let i = 10; i <= 1000; i = i * 10)
+// {
+//     console.log(i);
+// }
+
+// const animals = ["lion", "pangolim", "zebra", "dog", "cat", "bird"];
+// for (let i = animals.length - 1; i >= 0; i--)
+// {
+//     console.log(animals[i]);
+// }
+// const users = [
+//   {
+//     firstName: "Vito",
+//     lastName: "Corleone",
+//   },
+//   {
+//     firstName: "William",
+//     lastName: "Wallace",
+//   },
+//   {
+//     firstName: "Harry",
+//     lastName: "Potter",
+//   },
+//   {
+//     firstName: "Amadeus",
+//     lastName: "Mozart",
+//   },
+//   {
+//     firstName: "Barack",
+//     lastName: "Obama",
+//   },
+// ];
+
+// for (let i = 0; i < users.length; i++)
+// {
+//     console.log(`${i + 1}: My name is ${users[i].firstName} ${users[i].lastName}`);
+// }
+
+// const seatingChart = [
+//   ["Colas", "Benoit", "Elodie"],
+//   ["Sola", "Irina", "Antonino", "Eli"],
+//   ["John", "Maryna", "Naike", "Fabrice"],
+// ];
+
+// // I can use nested loops to do that :
+
+// for (let i = 0; i < seatingChart.length; i++) {
+//     console.log(`ROW #${i + 1}`)
+//   const row = seatingChart[i]; // I created a variable "row" just to be cleaner in the declaration of the next loop. You could put seatingChart[i].length, it would be the same thing
+//   for (let j = 0; j < row.length; j++) {
+//     console.log(row[j]);
+//   }
+// }
+
+//#endregion
+
+//#region 18
+// let maxNumber;
+// do 
+// {
+//     maxNumber = parseInt(prompt("Enter a max number: "));
+// } while (!maxNumber);
+// console.log("Max number is : " + maxNumber)
+// let numberToGuess = Math.floor(Math.random() * maxNumber + 1);
+// console.log("Number to guess is : " + numberToGuess);
+
+// let guessAttempt;
+// while (guessAttempt !== numberToGuess)
+// {
+//     do 
+//     {
+//         guessAttempt = parseInt(prompt("Guess the number!"));
+//         if (!guessAttempt) 
+//         {
+//             alert("Invalid answer. Please, guess the number.");
+//         }
+//     } while (!guessAttempt);
+
+//     console.log("Guess attempt is : " + guessAttempt);
+//     if (guessAttempt < numberToGuess)
+//     {
+//         alert("You guessed too low. Guess again!");
+//     } 
+//     else if (guessAttempt > numberToGuess)
+//     {
+//         alert("You guessed too high. Guess again!");
+//     }
+//     else
+//     {
+//         alert("Bravo! You win.");
+//     }
+// }
+//#endregion
+
+
 
 //#region MyPersonalLaboratory
 // console.log("a is " + a);
