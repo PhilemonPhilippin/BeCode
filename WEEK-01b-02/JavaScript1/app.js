@@ -313,6 +313,8 @@
 // }
 //#endregion
 
+
+
 //#region MyPersonalLaboratory
 // console.log("a is " + a);
 // console.log("b is " + b);
@@ -399,8 +401,23 @@
 // console.log(myArray);
 // let mySlice = myArray.slice(1, 3);
 // console.log(mySlice);
-
-
-
-
+// let myString = 'Hello, World!';
+// console.log(myString.repeat(5));
+// console.log(myString.substring(0, 5));
+// let myString = 'hi';
+// console.log(myString.padStart(4, '_').padEnd(6, '_'));
+// let sentence = "Hi, my name is Philémon and I am learning JavaScript from the start.";
+// let regExp = /Philémon/;
+// let matchReg = sentence.match(regExp);
+// let indexReg = sentence.search(regExp);
+// console.log(indexReg);
+// console.log(matchReg);
+// let myArray = [1, 2, [3, 4, [5, 6, [7, 8]]]];
+// let flattenedSecond = myArray.flat(3).map((x) => x - 1);
+// console.log(flattenedSecond);
+// let myArray = [1, 2, 3, 4, 5, 6];
+// let threeTimesEachEvenNumber = myArray.flatMap(
+//     (x) => x % 2 === 0 ? [x, x, x] : x
+// );
+// console.log(threeTimesEachEvenNumber);
 //#endregion
