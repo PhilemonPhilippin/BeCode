@@ -313,7 +313,90 @@
 // }
 //#endregion
 
+//#region 21b. Exercises
+// let rollADice = function(faces, times) {
+//     for (let i = 0; i < times; i++) {
+//         let die = Math.floor(Math.random() * faces + 1);
+//         console.log(`Die ${i + 1}: ${die}`)
+//     }
+// }
+// rollADice(6, 5);
 
+// let repeatIt = function(source, times) {
+//     console.log(source.repeat(times));
+// }
+// repeatIt('Bonjour, je suis un Perroquet.', 3);
+
+// function greet(firstName, lastName) {
+//     console.log(`This is ${firstName} ${lastName[0].toUpperCase()}.`)
+// }
+// greet("Philémon", "Philippin");
+
+// function sumIt(x, y) {
+//     return x + y;
+// }
+// const sum = sumIt(40, 2);
+// console.log(sum);
+
+// function isShortWeather(temperature) {
+//     console.log(temperature >= 24);
+// }
+// isShortWeather(13);
+// isShortWeather(27);
+// isShortWeather(-7);
+
+// function lastElement(source) {
+//     count = source.length;
+//     if (count < 1) {
+//         return null;
+//     } 
+//     else {
+//         return source[count - 1];
+//     }
+// }
+// console.log(lastElement([3, 5, 7]));
+// console.log(lastElement([1]));
+// console.log(lastElement([]));
+
+// function capitalize(source) {
+//     return source[0].toUpperCase() + source.substring(1);
+// }
+// console.log(capitalize("thIs iS a PaMPLemouSse."));
+
+// function sumArray(source) {
+//     return source.reduce(
+//         (agregate, current) => agregate + current
+//     );
+// }
+// console.log(sumArray([1, 2, 3]));
+// console.log(sumArray([2, 2, 2, 2]));
+// console.log(sumArray([50, 50, 1]));
+
+// function returnDay(day) {
+//     switch (day) {
+//         case 1:
+//             return "Monday";
+//         case 2:
+//             return "Tuesday";
+//         case 3:
+//             return "Wednesday";
+//         case 4:
+//             return "Thursday";
+//         case 5:
+//             return "Friday";
+//         case 6:
+//             return "Saturday";
+//         case 7:
+//             return "Sunday";
+//         default:
+//             return null;
+//     }  
+// }
+// console.log(returnDay(1));
+// console.log(returnDay(7));
+// console.log(returnDay(4));
+// console.log(returnDay(0));
+//#endregion
 
 //#region MyPersonalLaboratory
 // console.log("a is " + a);
@@ -420,4 +503,15 @@
 //     (x) => x % 2 === 0 ? [x, x, x] : x
 // );
 // console.log(threeTimesEachEvenNumber);
+// let sumIt = function(a, b) {
+//     let sum = 0;
+//     for (const arg of arguments) {
+//         sum += arg;
+//     }
+//     return sum;
+// }
+// console.log(sumIt(1, 2, 3, 4, 5));
+
+
+
 //#endregion
