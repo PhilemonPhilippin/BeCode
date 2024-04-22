@@ -398,6 +398,35 @@
 // console.log(returnDay(0));
 //#endregion
 
+//#region 23
+// const callXTimes = function (func, x) {
+//     for (let i = 0; i < x; i++) {
+//         func();
+//     }
+// };
+// const rollDie = function () {
+//   const roll = Math.floor(Math.random() * 6 + 1);
+//   console.log(roll);
+// };
+// callXTimes(rollDie, 5);
+//#endregion
+
+//#region 24
+// let user = {
+//     firstName: 'John',
+//     lastName: 'Smith',
+//     age: 42,
+//     printAge: function() {
+//         console.log(`${this.firstName} ${this.lastName} is ${this.age} years old.`);
+//     },
+//     aYearHasPast: function() {
+//         ++this.age;
+//     }
+// };
+//#endregion
+
+
+
 //#region MyPersonalLaboratory
 // console.log("a is " + a);
 // console.log("b is " + b);
@@ -511,7 +540,11 @@
 //     return sum;
 // }
 // console.log(sumIt(1, 2, 3, 4, 5));
-
-
+// const myDate = new Date();
+// console.log(myDate.toString());
+// console.log(myDate.toDateString());
+// const myUtcString = new Date().toUTCString();
+// const myUtcDate = new Date(myUtcString);
+// console.log(myUtcDate);
 
 //#endregion
