@@ -64,3 +64,25 @@ console.log("=============================================");
 // console.log(addUp(600));
 //#endregion
 
+//#region 03
+// console.log("Exercice 03: ");
+// console.log("===============");
+// function minMax(arr) {
+//     return [Math.min(...arr), Math.max(...arr)];
+// }
+// console.log(minMax([1, 2, 3, 4, 5]));
+// console.log(minMax([2334454, 5]));
+// console.log(minMax([1]));
+//#endregion
+
+//#region 04
+console.log("Exercice 04: ");
+console.log("===============");
+function detectWord(str) {
+    return str.replace(/[A-Z]/g, '');
+}
+console.log(detectWord("UcUNFYGaFYFYGtNUH"));
+console.log(detectWord("bEEFGBuFBRrHgUHlNFYaYr"));
+console.log(detectWord("YFemHUFBbezFBYzFBYLleGBYEFGBMENTment"));
+//#endregion
+
