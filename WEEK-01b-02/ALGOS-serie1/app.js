@@ -150,11 +150,11 @@ console.log("=============================================");
 //#region 09
 // console.log("Exercice 09: ");
 // console.log("===============");
-function calculateFuel(distance) {
-    let fuelForDistance = distance * 10;
-    return fuelForDistance <= 100 ? 100 : fuelForDistance;
-}
-console.log(calculateFuel(15));
-console.log(calculateFuel(23.5));
-console.log(calculateFuel(3));
+// function calculateFuel(distance) {
+//     let fuelForDistance = distance * 10;
+//     return fuelForDistance <= 100 ? 100 : fuelForDistance;
+// }
+// console.log(calculateFuel(15));
+// console.log(calculateFuel(23.5));
+// console.log(calculateFuel(3));
 //#endregion
