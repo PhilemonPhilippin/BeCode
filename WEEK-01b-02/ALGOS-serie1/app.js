@@ -128,5 +128,33 @@ console.log("=============================================");
 //#region 07
 // console.log("Exercice 07: ");
 // console.log("===============");
+// function profitableGamble(probability, prize, pay) {
+//     return probability * prize > pay;
+// }
+// console.log(profitableGamble(0.2, 50, 9));
+// console.log(profitableGamble(0.9, 1, 2));
+// console.log(profitableGamble(0.9, 3, 2));
+//#endregion
 
+//#region 08
+// console.log("Exercice 08: ");
+// console.log("===============");
+// function frames(minutes, FPS) {
+//     return minutes * 60 * FPS;
+// }
+// console.log(frames(1, 1));
+// console.log(frames(10, 1));
+// console.log(frames(10, 25));
+//#endregion
+
+//#region 09
+// console.log("Exercice 09: ");
+// console.log("===============");
+function calculateFuel(distance) {
+    let fuelForDistance = distance * 10;
+    return fuelForDistance <= 100 ? 100 : fuelForDistance;
+}
+console.log(calculateFuel(15));
+console.log(calculateFuel(23.5));
+console.log(calculateFuel(3));
 //#endregion
