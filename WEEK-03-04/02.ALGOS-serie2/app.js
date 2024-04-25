@@ -113,5 +113,54 @@ console.log("=============================================");
 //#region 07
 // console.log("Exercice 07: ");
 // console.log("===============");
+// function calculator(a, operator, b) {
+//     switch (operator) {
+//         case '+':
+//             return a + b;
+//         case '-':
+//             return a - b;
+//         case '*':
+//             return a * b;
+//         case '/':
+//             if (b === 0) {
+//                 return "Can't divide by 0!";
+//             }
+//             return a / b;
+//         default:
+//             return 'Wrong operator';
+//     }
+// }
+// console.log(calculator(2, '+', 2));
+// console.log(calculator(2, '*', 2));
+// console.log(calculator(4, '/', 2));
+// console.log(calculator(3, '/', 0));
+// console.log(calculator(6, '%', 2));
+// console.log(calculator(4, '-', 2));
+//#endregion
 
+//#region 08
+// console.log("Exercice 08: ");
+// console.log("===============");
+// function areaOfCountry(country, area) {
+//     let proportion = (100 / 148_940_000 * area).toFixed(2);
+//     return `${country} is ${proportion}% of the total world's landmass`;
+// }
+// console.log(areaOfCountry("Russia", 17098242));
+// console.log(areaOfCountry("USA", 9372610));
+// console.log(areaOfCountry("Iran", 1648195));
+//#endregion
+
+//#region 09
+// console.log("Exercice 09: ");
+// console.log("===============");
+// function reverseWords(str) {
+//     let retval = str;
+//     retval = retval.split(' ').reverse().join(' ');
+//     retval = retval.replace(/\s+/g, ' ');
+//     retval = retval.trim();
+//     return retval;
+// }
+// console.log(reverseWords(" the sky is blue"));
+// console.log(reverseWords("hello   world!  "));
+// console.log(reverseWords("a good example"));
 //#endregion
