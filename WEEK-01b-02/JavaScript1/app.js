@@ -246,11 +246,10 @@
 // {
 //     maxNumber = parseInt(prompt("Enter a max number: "));
 // } while (!maxNumber);
-// console.log("Max number is : " + maxNumber)
-// let numberToGuess = Math.floor(Math.random() * maxNumber + 1);
-// console.log("Number to guess is : " + numberToGuess);
 
+// let numberToGuess = Math.floor(Math.random() * maxNumber + 1);
 // let guessAttempt;
+// let guessCount = 0;
 // while (guessAttempt !== numberToGuess)
 // {
 //     do 
@@ -262,7 +261,7 @@
 //         }
 //     } while (!guessAttempt);
 
-//     console.log("Guess attempt is : " + guessAttempt);
+//     guessCount++;
 //     if (guessAttempt < numberToGuess)
 //     {
 //         alert("You guessed too low. Guess again!");
@@ -273,7 +272,7 @@
 //     }
 //     else
 //     {
-//         alert("Bravo! You win.");
+//         alert(`Congratulations! You win with ${guessCount} attempts.`);
 //     }
 // }
 //#endregion
@@ -295,9 +294,10 @@
 //             console.log(`The new to-do '${newToDo}' was added to the list.`);
 //             break;
 //         case "list":
+//             console.log("********* TODO LIST *********");
 //             for (let i = 0; i < toDos.length; i++)
 //             {
-//                 console.log(`${i + 1} : ${toDos[i]}`);
+//                 console.log(`${i + 1}. ${toDos[i]}`);
 //             }
 //             break;
 //         case "delete":
