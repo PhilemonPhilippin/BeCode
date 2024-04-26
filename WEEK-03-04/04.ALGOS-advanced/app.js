@@ -80,3 +80,41 @@ console.log("=============================================");
 
 // console.log(ransomNote("my magazine my many words my", "my magazine has many words and many letters wow it is my magazine"));
 //#endregion
+
+//#region 02
+// console.log("Exercice 02: ");
+// console.log("===============");
+// function isPalindrome(text) {
+//     let retval = true;
+//     text = text.replace(/[^a-zA-Z]/g, '');
+//     let textArray = text.split('');
+//     let reverseTextArray = textArray.toReversed();
+//     for (let i = 0; i < textArray.length; i++) {
+//         if (textArray[i].toLowerCase() !== reverseTextArray[i].toLowerCase()) {
+//             retval = false;
+//         }
+//     }
+//     return retval;
+// }
+// // Test cases :
+// //===========================
+// console.log(isPalindrome("kayak"));
+// console.log(isPalindrome("race car"));
+// console.log(isPalindrome("hello world"));
+// console.log(isPalindrome("Madam, I'm Adam"));
+// console.log(isPalindrome("deified"));
+// console.log(isPalindrome("UFO tofu"));
+// console.log(isPalindrome("Sir, I demand, I am a maid named Iris."));
+// console.log(isPalindrome("Maybe it ! is & true , , ? maybe it is not. Let's see, yep."));
+//#endregion
+
+//#region 03
+console.log("Exercice 03: ");
+console.log("===============");
+
+
+// Test cases :
+//===========================
+
+//#endregion
+
