@@ -147,7 +147,20 @@ console.log("=============================================");
 //#endregion
 
 //#region 04
-console.log("Exercice 04: ");
+// console.log("Exercice 04: ");
+// console.log("===============");
+// function reverseString(str) {
+//     let retval = str.split(' ');
+//     return retval.map((word) => word.toLowerCase().split('').reverse().join('')).join(' ');
+// }
+// console.log(reverseString("This is a string of words"));
+//#endregion
+
+//#region 05
+console.log("Exercice 05: ");
 console.log("===============");
 
+
 //#endregion
+
+
