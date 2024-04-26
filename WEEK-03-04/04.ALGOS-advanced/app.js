@@ -109,12 +109,45 @@ console.log("=============================================");
 //#endregion
 
 //#region 03
-console.log("Exercice 03: ");
-console.log("===============");
-
-
-// Test cases :
-//===========================
-
+// console.log("Exercice 03: ");
+// console.log("===============");
+// function caesarCipher(str, num) {
+//     let retval = [];
+//     str = str.toLowerCase();
+//     // a = 97 à z = 122
+//     let strArray = str.split('');
+//     for (let i = 0; i < strArray.length; i++) {
+//         let charAsciiCode = strArray[i].charCodeAt(0);
+//         if (charAsciiCode >= 97 && charAsciiCode <= 122) {
+//             let cypherChar;
+//             let sum = charAsciiCode + num;
+//             if (sum > 122) {
+//                 let cypherCharAsciiCode = sum - 26;
+//                 cypherChar = String.fromCharCode(cypherCharAsciiCode);
+//             }
+//             else if (sum < 97) {
+//                 let cypherCharAsciiCode = sum + 26;
+//                 cypherChar = String.fromCharCode(cypherCharAsciiCode);
+//             } else {
+//                 cypherChar = String.fromCharCode(sum);
+//             }
+//             retval.push(cypherChar);
+//         }
+//         else {
+//             retval.push(strArray[i]);
+//         }
+//     }
+//     return retval.join('');
+// }
+// // Test cases :
+// //===========================
+// console.log(caesarCipher("zoo keeper", 2));
+// console.log(caesarCipher("bqq mggrgt", -2));
+// console.log(caesarCipher("My name is Henrique", 3));
 //#endregion
 
+//#region 04
+console.log("Exercice 04: ");
+console.log("===============");
+
+//#endregion
