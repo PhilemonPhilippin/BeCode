@@ -68,7 +68,9 @@ console.log("=============================================");
 //#region 08
 // console.log("Exercice 08: ");
 // console.log("===============");
-// const occurencies = (str, letter) => Array.from(str).reduce((aggregate, current) => aggregate = current === letter ? aggregate + 1 : aggregate, 0);
+// // const occurencies = (str, letter) => Array.from(str).reduce((aggregate, current) => aggregate = current === letter ? aggregate + 1 : aggregate, 0);
+// const occurencies = (str, letter) => str.match(new RegExp(letter, "g"))?.length ?? 0;
+
 // console.log(occurencies("hello", "l"));
 // console.log(occurencies("abracadabra", "a"));
 // console.log(occurencies("oups", "z"));
@@ -76,8 +78,51 @@ console.log("=============================================");
 
 
 //#region 09
-console.log("Exercice 09: ");
-console.log("===============");
+// console.log("Exercice 09: ");
+// console.log("===============");
+// const onlyPositives = arr => arr.reduce((aggregate, current) => aggregate = current > 0 ? aggregate + current : aggregate, 0);
+// console.log(onlyPositives([1, 6, 2, -3, 5, -12]));
+// console.log(onlyPositives([-3, -4, -2]));
+//#endregion
 
-
+//#region 10
+// console.log("Exercice 10: ");
+// console.log("===============");
+// const scanAndFind = (arr, obj) => arr.filter((x) => x[Object.keys(obj)] === obj[Object.keys(obj)]);
+// console.log(scanAndFind(
+// [
+//     {
+//         firstName: "Vito",
+//         lastName: "Corleone",
+//     },
+//     {
+//         firstName: "Jon",
+//         lastName: "Snow",
+//     },
+//     {
+//         firstName: "Harry",
+//         lastName: "Potter",
+//     },
+//     {
+//         firstName: "Michal",
+//         lastName: "Corleone",
+//     },
+// ],
+// {
+// lastName: "Corleone",
+// }
+// ));
+// console.log(scanAndFind(
+//     [
+//         { fullName: "Roi Baudoin", id: 49762 },
+//         { fullName: "Margareth Tatcher", id: 94357 },
+//         { fullName: "Barack Obama", id: 76458 },
+//         { fullName: "Emmanuel Macron", id: 10687 },
+//         { fullName: "Charles de Gaulle", id: 67098 },
+//         { fullName: "Boris Johnson", id: 16437 },
+//     ],
+//     {
+//         id: 10687 
+//     }
+// ));
 //#endregion
