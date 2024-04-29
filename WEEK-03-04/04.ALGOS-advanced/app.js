@@ -157,10 +157,69 @@ console.log("=============================================");
 //#endregion
 
 //#region 05
-console.log("Exercice 05: ");
-console.log("===============");
-
-
+// console.log("Exercice 05: ");
+// console.log("===============");
+// function reverseArray(arr) {
+//     for (let i = 0; i <= arr.length / 2 - 1; i++) {
+//         let temp = arr[i];
+//         arr[i] = arr[arr.length - 1 - i];
+//         arr[arr.length - 1 - i] = temp;
+//     }
+//     return arr;
+// }
+// console.log(reverseArray([1]));
+// console.log(reverseArray([1, 2]));
+// console.log(reverseArray([1, 2, 3]));
+// console.log(reverseArray([1, 2, 3, 4]));
+// console.log(reverseArray([1, 2, 3, 4, 5]));
+// console.log(reverseArray([1, 2, 3, 4, 5, 6]));
+// console.log(reverseArray([1, 2, 3, 4, 5, 6, 7]));
+// console.log(reverseArray([1, 2, 3, 4, 5, 6, 7, 8]));
 //#endregion
 
+//#region 06
+// console.log("Exercice 06: ");
+// console.log("===============");
+// function returnEveryPair(numArray, sum) {
+//     let retval = [];
+//     for(let i = 0; i < numArray.length - 1; i++) {
+//         for (let j = i + 1; j < numArray.length; j++) {
+//             if (numArray[i] + numArray[j] === sum) {
+//                 retval.push([numArray[i], numArray[j]]);
+//             }
+//         }
+//     }
+//     return retval;
+// }
+// console.log(returnEveryPair([1, 6, 4, 5, 3, 3], 7));
+// console.log(returnEveryPair([1, 2, 3, 2, 1, 4, 8], 5));
+// console.log(returnEveryPair([1, 2, 3, 2, 1, 4, 8], 4));
+// console.log(returnEveryPair([1, 3, 2, 2, 0], 3));
+//#endregion
+
+// #region 07
+// console.log("Exercice 07: ");
+// console.log("===============");
+// // TODO: Essayer avec la récursivité.
+// function fibonacci(num) {
+//     if (num === 0) {
+//         return [];
+//     }
+//     if (num === 1) {
+//         return [1];
+//     }
+    
+//     let retval = [1, 1];
+//     for(let i = 2; i < num; i++) {
+//         retval.push(retval[i-1] + retval[i-2]);
+//     }
+//     return retval;
+// }
+// console.log(fibonacci(4));
+// console.log(fibonacci(9));
+// console.log(fibonacci(6));
+// console.log(fibonacci(2));
+// console.log(fibonacci(1));
+// console.log(fibonacci(0));
+//#endregion
 
