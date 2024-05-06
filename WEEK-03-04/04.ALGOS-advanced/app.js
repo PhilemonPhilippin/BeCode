@@ -201,6 +201,25 @@ console.log("=============================================");
 // console.log("Exercice 07: ");
 // console.log("===============");
 // // TODO: Essayer avec la récursivité.
+// function fibonacci(num, arr = [ 0,1 ], start = 0) {
+//   // validation of num
+//   if (num === 0) {
+//     return [];
+//   }
+//   else if (num === 1) {
+//     return [0];
+//   }
+//   else if (num === 2) {
+//     return arr;
+//   }
+//   // fibonacci really starts here
+//   if (start + 1 === num - 1) {
+//     return arr;
+//   } else {
+//     arr.push(arr[start] + arr[start + 1]);
+//     return fibonacci(num, arr, start + 1);
+//   }
+// }
 // function fibonacci(num) {
 //     if (num === 0) {
 //         return [];
