@@ -200,7 +200,7 @@ console.log("=============================================");
 // #region 07
 // console.log("Exercice 07: ");
 // console.log("===============");
-// // TODO: Essayer avec la récursivité.
+// // Avec récursivité.
 // function fibonacci(num, arr = [ 0,1 ], start = 0) {
 //   // validation of num
 //   if (num === 0) {
@@ -220,6 +220,32 @@ console.log("=============================================");
 //     return fibonacci(num, arr, start + 1);
 //   }
 // }
+
+// // Avec récursivité mais sans changer les paramètres
+// function fibonacci(num) {
+//   // validation of num
+//   if (num === 0) {
+//     return [];
+//   }
+//   else if (num === 1) {
+//     return [0];
+//   }
+//   else if (num === 2) {
+//     return [0, 1];
+//   }
+//   // fibonacci really starts here
+//   function innerFibonacci(num, arr, start) {
+//     if (start + 1 === num - 1) {
+//       return arr;
+//     } else {
+//       arr.push(arr[start] + arr[start + 1]);
+//       return innerFibonacci(num, arr, start + 1);
+//     }
+//   }
+//   return innerFibonacci(num, arr = [0, 1], start = 0);
+// }
+
+// // Avec itération.
 // function fibonacci(num) {
 //     if (num === 0) {
 //         return [];
