@@ -1,0 +1,44 @@
+@media (max-width: 768px) {
+  body {
+    background: gold;
+  }
+  h2:not(.a) {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+  body {
+    background: pink;
+  }
+  h2:not(.b) {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1440px) {
+  body {
+    background: chocolate;
+  }
+  h2:not(.c) {
+    display: none;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 1920px) {
+  body {
+    background: cadetblue;
+  }
+  h2:not(.d) {
+    display: none;
+  }
+}
+
+@media (min-width: 1920px) {
+  body {
+    background: cornflowerblue;
+  }
+  h2:not(.e) {
+    display: none;
+  }
+}
