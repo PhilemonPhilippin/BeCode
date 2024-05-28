@@ -1,0 +1,23 @@
+.red {
+  color: red;
+}
+.green {
+  color: green;
+}
+
+.player-score {
+  font-size: 2rem;
+}
+
+.score {
+  margin-bottom: 15px;
+}
+
+.player-btns {
+  margin-bottom: 15px;
+}
+
+.reset-btn {
+  padding: 5px;
+  background-color: red;
+}

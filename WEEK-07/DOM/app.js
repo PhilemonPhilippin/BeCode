@@ -64,3 +64,23 @@
 //   // Do something nice !
 // }
 
+// const parent = document.querySelector(".parent");
+// parent.addEventListener("click", (e) => {
+//   if (e.target.innerText === "One") {
+//     alert("You clicked the first button");
+//   }
+
+//   if (e.target.innerText === "Two") {
+//     alert("Elodie loves cats");
+//   }
+
+//   if (e.target.innerText === "Three") {
+//     alert("I am so happy !");
+//   }
+// });
+// const myEvent = parent.addEventListener("click", btnClicked);
+// function btnClicked(e) {
+//   console.log(e.target.innerText);
+// }
+
+// parent.removeEventListener("click", btnClicked);
