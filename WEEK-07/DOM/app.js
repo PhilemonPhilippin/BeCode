@@ -84,3 +84,10 @@
 // }
 
 // parent.removeEventListener("click", btnClicked);
+
+// const myInput = document.querySelector("input");
+// let val = "";
+// myInput.addEventListener("change", () => {
+//   val = myInput.value;
+//   console.log(val);
+// });
