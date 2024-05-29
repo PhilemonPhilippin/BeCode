@@ -2,15 +2,15 @@
 const inputs = document.querySelectorAll("input");
 let userName = inputs[0];
 let email = inputs[1];
-let pswd = inputs[2];
-let confirmpswd = inputs[3];
+let password = inputs[2];
+let confirmPassword = inputs[3];
 
 // validation messages
 const validationMessages = document.querySelectorAll(".msg");
 let userNameMessage = validationMessages[0];
 let emailMessage = validationMessages[1];
 let passwordMessage = validationMessages[2];
-let confirmpasswordMessage = validationMessages[3];
+let confirmPasswordMessage = validationMessages[3];
 
 const submit = document.querySelector(".btn-submit");
 const reset = document.querySelector(".btn-reset");
@@ -28,29 +28,42 @@ function onSubmit(e) {
   const inputsValues = Array.from(inputs).map((x) => x.value);
   const userNameValue = inputsValues[0];
   const emailValue = inputsValues[1];
-  const pswdValue = inputsValues[2];
-  const confirmpswdValue = inputsValues[3];
+  const passwordValue = inputsValues[2];
+  const confirmPasswordValue = inputsValues[3];
 
-  let valid = true;
-
-  valid = validateUserName(userNameValue);
-  if (valid) {
+  const userNameValid = validateUserName(userNameValue);
+  if (userNameValid) {
     setGreen(userName);
     userNameMessage.innerText = "Success!";
     setGreen(userNameMessage);
   }
 
-  // TODO: vérifier que la validation email fonctionne
-
-  valid = validateEmail(emailValue);
-  if (valid) {
+  const emailValid = validateEmail(emailValue);
+  if (emailValid) {
     setGreen(email);
     emailMessage.innerText = "Success!";
     setGreen(emailMessage);
   }
 
-  // Si all valid
-  if (valid) {
+  const passwordValid = validatePassword(passwordValue);
+  if (passwordValid) {
+    setGreen(password);
+    passwordMessage.innerText = "Success!";
+    setGreen(passwordMessage);
+  }
+
+  const confirmPasswordValid = validateConfirmPassword(
+    confirmPasswordValue,
+    passwordValue
+  );
+  if (confirmPasswordValid) {
+    setGreen(confirmPassword);
+    confirmPasswordMessage.innerText = "Success!";
+    setGreen(confirmPasswordMessage);
+  }
+
+  // If all valid
+  if (userNameValid && emailValid && passwordValid && confirmPasswordValid) {
     inputs.forEach((x) => console.log(x.value));
   }
 }
@@ -73,20 +86,46 @@ function validateUserName(userNameValue) {
     setRed(userName);
     userNameValid = false;
   }
+
   return userNameValid;
 }
 
 function validateEmail(emailValue) {
-    let emailValid = true;
+  let emailValid = true;
 
   const regexMatch = emailValue.match(regex);
-    if (regexMatch == null || regexMatch !== emailValue) {
-        setRed(emailMessage);
-        setRed(email);
-        emailValid = false;
-    }
+  if (regexMatch == null || regexMatch[0] !== emailValue) {
+    emailMessage.innerText = "Email address is not valid.";
+    setRed(emailMessage);
+    setRed(email);
+    emailValid = false;
+  }
 
-    return emailValid;
+  return emailValid;
+}
+
+function validatePassword(passwordValue) {
+  let passwordValid = true;
+  if (passwordValue.length < 8 || passwordValue.lngth > 15) {
+    passwordMessage.innerText = "Password must be between 8 and 15 characters.";
+    setRed(passwordMessage);
+    setRed(password);
+    passwordValid = false;
+  }
+
+  return passwordValid;
+}
+
+function validateConfirmPassword(confirmPasswordValue, passwordValue) {
+  let confirmPasswordValid = true;
+  if (confirmPasswordValue !== passwordValue) {
+    confirmPasswordMessage.innerText = "Password is not the same";
+    setRed(confirmPasswordMessage);
+    setRed(confirmPassword);
+    confirmPasswordValid = false;
+  }
+
+  return confirmPasswordValid;
 }
 
 function onReset() {
