@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+form {
+  max-width: 33%;
+  padding: 20px;
+  margin: 20px;
+  border: solid 1px;
+}
+div {
+  margin-bottom: 15px;
+}
+label {
+  display: inline-block;
+  margin: 8px 0;
+}
+input {
+  display: inline-block;
+  width: 100%;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.btn-submit {
+  font-size: 1rem;
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-reset {
+  font-size: 1rem;
+  width: 100%;
+  background-color: grey;
+  color: white;
+  padding: 7px 10px;
+  margin:0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: greenyellow;
+}
