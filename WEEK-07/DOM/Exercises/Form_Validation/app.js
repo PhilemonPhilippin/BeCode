@@ -16,8 +16,9 @@ const submit = document.querySelector(".btn-submit");
 const reset = document.querySelector(".btn-reset");
 submit.addEventListener("click", (e) => onSubmit(e));
 reset.addEventListener("click", onReset);
-// regex email:
-// (?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])
+
+const regex =
+  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 function onSubmit(e) {
   e.preventDefault();
@@ -38,6 +39,17 @@ function onSubmit(e) {
     userNameMessage.innerText = "Success!";
     setGreen(userNameMessage);
   }
+
+  // TODO: vérifier que la validation email fonctionne
+
+  valid = validateEmail(emailValue);
+  if (valid) {
+    setGreen(email);
+    emailMessage.innerText = "Success!";
+    setGreen(emailMessage);
+  }
+
+  // Si all valid
   if (valid) {
     inputs.forEach((x) => console.log(x.value));
   }
@@ -62,6 +74,19 @@ function validateUserName(userNameValue) {
     userNameValid = false;
   }
   return userNameValid;
+}
+
+function validateEmail(emailValue) {
+    let emailValid = true;
+
+  const regexMatch = emailValue.match(regex);
+    if (regexMatch == null || regexMatch !== emailValue) {
+        setRed(emailMessage);
+        setRed(email);
+        emailValid = false;
+    }
+
+    return emailValid;
 }
 
 function onReset() {
