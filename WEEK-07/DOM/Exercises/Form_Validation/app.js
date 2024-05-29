@@ -32,6 +32,7 @@ function onSubmit(e) {
   const confirmPasswordValue = inputsValues[3];
 
   const userNameValid = validateUserName(userNameValue);
+
   if (userNameValid) {
     setGreen(userName);
     userNameMessage.innerText = "Success!";
@@ -39,6 +40,7 @@ function onSubmit(e) {
   }
 
   const emailValid = validateEmail(emailValue);
+
   if (emailValid) {
     setGreen(email);
     emailMessage.innerText = "Success!";
@@ -46,6 +48,7 @@ function onSubmit(e) {
   }
 
   const passwordValid = validatePassword(passwordValue);
+
   if (passwordValid) {
     setGreen(password);
     passwordMessage.innerText = "Success!";
@@ -56,6 +59,7 @@ function onSubmit(e) {
     confirmPasswordValue,
     passwordValue
   );
+
   if (confirmPasswordValid) {
     setGreen(confirmPassword);
     confirmPasswordMessage.innerText = "Success!";
