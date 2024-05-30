@@ -32,6 +32,11 @@ h1 {
   height: 100px;
   width: 100px;
   background: #233142;
+  font-size: 4rem;
+  color: #e3e3e3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .message {

@@ -1,20 +1,10 @@
 const board = document.querySelector(".board");
+const message = document.querySelector(".message");
+const restart = document.querySelector(".restart");
 let turn = 1;
-
-for (let i = 0; i < 9; i++) {
-  const elem = document.createElement("div");
-  elem.classList.add("cell");
-  elem.setAttribute("id", i);
-  elem.addEventListener("click", (e) => {
-    // Si la cellule n'est pas vide : alert("Someone clicked this cell already.");
-    // Si la cellule est vide : mettre un X ou un O en fonction du tour.
-  });
-  board.appendChild(elem);
-}
-
-const cells = document.querySelectorAll(".cell");
 const player1 = "X";
 const player2 = "O";
+
 const winCombinations = [
   [0, 1, 2],
   [3, 4, 5],
@@ -26,31 +16,85 @@ const winCombinations = [
   [2, 4, 6],
 ];
 
-const playedCells = ["", "", "", "", "", "", "", "", ""];
+let playedCells = ["", "", "", "", "", "", "", "", ""];
 
-// function gameStart() {
-//   board.addEventListener("click", (e) => {
-//     if (turn === 9) {
-//       gameOver();
-//     }
-//     if (e.target.classList.contains("cell")) {
-//       if (e.target.innerText === "") {
-//         e.target.innerText = turn % 2 === 0 ? player2 : player1;
-//         console.log(e.target);
-//         turn++;
-//       } else {
-//         alert("Someone clicked this cell already");
-//       }
-//     }
-//   });
-// }
-
-function gameStart() {
-    
+for (let i = 0; i < 9; i++) {
+  const elem = document.createElement("div");
+  elem.classList.add("cell");
+  elem.setAttribute("id", i);
+  elem.addEventListener("click", (e) => onClick(e, i));
+  board.appendChild(elem);
 }
 
-function gameOver() {
-  console.log("Game over");
+function onClick(e, index) {
+  if (e.target.innerText === "") {
+    e.target.innerText = turn % 2 === 0 ? player2 : player1;
+    e.target.classList.add(turn % 2 === 0 ? "blue" : "red");
+    playedCells[index] = turn % 2 === 0 ? player2 : player1;
+    turn++;
+  } else {
+    alert("Someone clicked this cell already");
+  }
+  let gameState = checkIfGameWon();
+  if (turn > 9 || gameState > 0) {
+    gameOver(gameState);
+  }
 }
 
-gameStart();
+restart.addEventListener("click", resetGame);
+
+function gameOver(gameState) {
+  let endMsg = "Gamer over.";
+  switch (gameState) {
+    case 0:
+      endMsg += "\nNo player won.";
+      break;
+    case 1:
+      endMsg += "\nPlayer 1 won.";
+      break;
+    case 2:
+      endMsg += "\nPlayer 2 won.";
+      break;
+  }
+  message.innerText = endMsg;
+}
+
+function checkIfGameWon() {
+  const player1Plays = [];
+  const player2Plays = [];
+  playedCells.forEach((play, i) => {
+    if (play === "X") {
+      player1Plays.push(i);
+    } else if (play === "O") {
+      player2Plays.push(i);
+    }
+  });
+  let gameState = 0;
+  if (win(player1Plays)) gameState = 1;
+  else if (win(player2Plays)) gameState = 2;
+  return gameState;
+}
+
+function win(plays) {
+  let retval = false;
+  for (let i = 0; i < winCombinations.length; i++) {
+    let counter = 0;
+    for (let j = 0; j < plays.length; j++) {
+      if (winCombinations[i].includes(plays[j])) counter++;
+    }
+    if (counter === 3) return true;
+  }
+  return retval;
+}
+
+function resetGame() {
+  turn = 1;
+  playedCells = ["", "", "", "", "", "", "", "", ""];
+  const cells = document.querySelectorAll(".cell");
+  cells.forEach((cell) => {
+    cell.innerText = "";
+    cell.classList.remove("blue");
+    cell.classList.remove("red");
+  });
+  message.innerText = "Message here";
+}
