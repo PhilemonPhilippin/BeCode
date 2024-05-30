@@ -22,14 +22,18 @@ for (let i = 0; i < 9; i++) {
   const elem = document.createElement("div");
   elem.classList.add("cell");
   elem.setAttribute("id", i);
-  elem.addEventListener("click", (e) => onClick(e, i));
+  elem.addEventListener("click", onClick);
   board.appendChild(elem);
 }
+restart.addEventListener("click", resetGame);
 
-function onClick(e, index) {
+let cells = document.querySelectorAll(".cell");
+
+function onClick(e) {
   if (e.target.innerText === "") {
     e.target.innerText = turn % 2 === 0 ? player2 : player1;
     e.target.classList.add(turn % 2 === 0 ? "blue" : "red");
+    const index = e.target.getAttribute("id");
     playedCells[index] = turn % 2 === 0 ? player2 : player1;
     turn++;
   } else {
@@ -40,8 +44,6 @@ function onClick(e, index) {
     gameOver(gameState);
   }
 }
-
-restart.addEventListener("click", resetGame);
 
 function gameOver(gameState) {
   let endMsg = "Gamer over.";
@@ -57,6 +59,11 @@ function gameOver(gameState) {
       break;
   }
   message.innerText = endMsg;
+  disableCells();
+}
+
+function disableCells() {
+  cells.forEach((cell) => cell.removeEventListener("click", onClick));
 }
 
 function checkIfGameWon() {
@@ -90,11 +97,15 @@ function win(plays) {
 function resetGame() {
   turn = 1;
   playedCells = ["", "", "", "", "", "", "", "", ""];
-  const cells = document.querySelectorAll(".cell");
+  resetCells();
+  message.innerText = "Message here";
+}
+
+function resetCells() {
   cells.forEach((cell) => {
     cell.innerText = "";
     cell.classList.remove("blue");
     cell.classList.remove("red");
+    cell.addEventListener("click", onClick);
   });
-  message.innerText = "Message here";
 }
