@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+.hamburger {
+  margin-bottom: 15px;
+}
+
+.hamburger img {
+  max-width: 30px;
+  max-height: 30px;
+}
+
+.side-pannel {
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.display {
+  display: flex;
+}
