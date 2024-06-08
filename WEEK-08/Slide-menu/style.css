@@ -11,21 +11,29 @@ main {
   gap: 15px;
 }
 
-.hamburger {
-  margin-bottom: 15px;
-}
-
 .hamburger img {
   max-width: 30px;
   max-height: 30px;
 }
 
 .side-pannel {
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: 15px;
+  width: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+  background: #212121;
+  border-radius: 20px;
+}
+
+.side-pannel a {
+  text-decoration: none;
+  color: white;
 }
 
 .display {
-  display: flex;
+  width: 250px;
+  overflow-x: visible;
+  padding: 20px;
 }
