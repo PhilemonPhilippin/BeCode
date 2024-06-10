@@ -1,9 +1,23 @@
-/* section {
-  height: 100vh;
-  width: 100vh;
-} */
-
 .swiper {
   width: 100vh;
   height: 100vh;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
+
+.swiper-button-next {
+  background-image: url("./next.png") !important;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+}
+
+.swiper-button-prev {
+  background-image: url("./prev.png") !important;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
 }
