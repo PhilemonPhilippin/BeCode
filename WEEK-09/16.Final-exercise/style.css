@@ -29,6 +29,10 @@ h1 {
 main {
   color: white;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .intro h2 {
@@ -51,7 +55,7 @@ main {
   padding: 6px;
   margin-top: 8px;
   border: none;
-  width: 90%;
+  width: 400px;
 }
 
 .search button {
@@ -63,6 +67,28 @@ main {
 
 .search button:hover {
   background: #6f8ab7;
+}
+
+.search-result-text {
+  padding: 10px;
+}
+
+.grid {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.grid-item {
+  width: 200px;
+  height: 200px;
+}
+
+img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 footer {

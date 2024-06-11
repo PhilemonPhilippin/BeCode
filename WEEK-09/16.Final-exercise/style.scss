@@ -50,6 +50,8 @@ h1 {
 main {
   color: white;
   padding: 10px;
+  @include flex(column);
+  @include flex-center-both();
 }
 
 .intro h2 {
@@ -72,7 +74,7 @@ main {
   padding: 6px;
   margin-top: 8px;
   border: none;
-  width: 90%;
+  width: 400px;
 }
 
 .search button {
@@ -84,6 +86,27 @@ main {
 
 .search button:hover {
   background: $dark-blue-color;
+}
+
+.search-result-text {
+  padding: 10px;
+}
+
+.grid {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.grid-item {
+  width: 200px;
+  height: 200px;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
 }
 
 footer {
