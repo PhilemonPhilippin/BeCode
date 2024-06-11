@@ -43,7 +43,7 @@ body header {
 
 h1 {
   padding: 15px;
-  color: white;
+  color: $green-color;
   font-size: 2.5rem;
 }
 
@@ -62,8 +62,8 @@ main {
   padding: 10px;
 }
 
-.search h3 {
-  font-size: 1.2rem;
+.search h2 {
+  font-size: 1.4rem;
 }
 
 .search input {
@@ -86,7 +86,7 @@ main {
 
 .search-result-text {
   padding: 10px;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .grid {
@@ -100,6 +100,13 @@ main {
   @include flex(column);
   @include flex-center-y();
   max-width: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background: $green-color;
+  padding: 7px;
+}
+
+.title {
+  color: black;
 }
 
 img {

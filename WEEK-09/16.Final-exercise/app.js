@@ -29,6 +29,7 @@ function updateGrid(meals) {
     grid.appendChild(div);
     const title = meal["strMeal"];
     let titleElem = document.createElement("h4");
+    titleElem.classList.add("title");
     titleElem.innerText = title;
     div.appendChild(titleElem);
   });
