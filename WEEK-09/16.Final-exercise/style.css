@@ -35,10 +35,6 @@ main {
   align-items: center;
 }
 
-.intro h2 {
-  font-size: 1.8rem;
-}
-
 .intro p {
   padding: 5px;
 }
@@ -71,6 +67,7 @@ main {
 
 .search-result-text {
   padding: 10px;
+  font-size: 1.2rem;
 }
 
 .grid {
