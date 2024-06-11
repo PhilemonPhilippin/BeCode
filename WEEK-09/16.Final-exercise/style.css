@@ -56,7 +56,7 @@ main {
 
 .search button {
   padding: 6px;
-  background: #cae5ff;
+  background: #dbf4a7;
   border: none;
   cursor: pointer;
 }
@@ -85,6 +85,7 @@ main {
   border-radius: 15px;
   z-index: 2;
   overflow-y: initial;
+  background: #dbf4a7;
 }
 
 .modal .flex {
@@ -106,19 +107,25 @@ main {
   padding: 10px;
 }
 
+.meal-card h3 {
+  color: black;
+}
+
 .meal-ingredients {
   font-size: 0.9rem;
-  color: #777;
-  padding: 10px;
+  color: black;
+  padding: 15px;
+  list-style-type: square;
 }
 
 .modal h2 {
-  color: #777;
+  color: black;
+  font-size: 1.4rem;
 }
 
 .modal p {
   font-size: 0.9rem;
-  color: #777;
+  color: black;
   margin: 0.4rem 0 0.2rem;
   height: 200px;
 }
@@ -156,15 +163,17 @@ main {
 .grid-item {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-evenly;
   max-width: 250px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   background: #dbf4a7;
   padding: 7px;
+  border-radius: 7px;
 }
 
 .grid-item:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  background: #6f8ab7;
 }
 
 .title {

@@ -30,7 +30,7 @@ async function searchMeals() {
 }
 
 function updateSearchResultText(text) {
-  searchResultText.innerText = `These are the results for "${text}" :`;
+  searchResultText.innerText = `Results for "${text}" :`;
 }
 
 function updateGrid(meals) {
@@ -78,7 +78,6 @@ function openModal(meal) {
     listItem.innerText = `${ingredient.quantity} of ${ingredient.name}`;
     mealIngredients.appendChild(listItem);
   });
-  console.log(ingredients);
   mealTitle.innerText = title;
   mealInstructions.innerText = instructions;
   mealThumb.setAttribute("src", thumb);
