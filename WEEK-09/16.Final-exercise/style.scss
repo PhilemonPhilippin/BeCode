@@ -1,0 +1,94 @@
+$dark-color: #615d6c;
+$light-color: #cae5ff;
+$light-blue-color: #89bbfe;
+$dark-blue-color: #6f8ab7;
+$green-color: #dbf4a7;
+
+@mixin flex($direction) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+@mixin flex-center-x {
+  justify-content: center;
+}
+
+@mixin flex-center-y {
+  align-items: center;
+}
+
+@mixin flex-center-both {
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: $dark-color;
+  @include flex(column);
+  @include flex-center-y();
+}
+
+body header {
+  width: 100vw;
+  @include flex(column);
+  @include flex-center-both();
+}
+
+h1 {
+  padding: 15px;
+  color: white;
+  font-size: 2.5rem;
+}
+
+main {
+  color: white;
+  padding: 10px;
+}
+
+.intro h2 {
+  font-size: 1.8rem;
+}
+
+.intro p {
+  padding: 5px;
+}
+
+.search {
+  padding: 10px;
+}
+
+.search h3 {
+  font-size: 1.2rem;
+}
+
+.search input {
+  padding: 6px;
+  margin-top: 8px;
+  border: none;
+  width: 90%;
+}
+
+.search button {
+  padding: 6px;
+  background: $light-color;
+  border: none;
+  cursor: pointer;
+}
+
+footer {
+  margin-top: auto;
+  padding: 10px;
+}
+
+footer h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+}
