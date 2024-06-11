@@ -7,6 +7,7 @@ const closeModalBtn = document.querySelector(".btn-close");
 const mealTitle = document.querySelector(".meal-title");
 const mealInstructions = document.querySelector(".meal-instructions");
 const mealThumb = document.querySelector(".meal-thumb");
+const mealIngredients = document.querySelector(".meal-ingredients");
 
 closeModalBtn.addEventListener("click", () => {
   modal.classList.add("hidden");
@@ -61,10 +62,20 @@ function openModal(meal) {
     if (meal[`strIngredient${i}`] === "") {
       break;
     } else {
-      ingredients.push([meal[`strIngredient${i}`], meal[`strMeasure${i}`]]);
+      ingredients.push({
+        name: meal[`strIngredient${i}`],
+        quantity: meal[`strMeasure${i}`],
+      });
     }
   }
 
+  mealIngredients.innerHTML = "";
+  ingredients.forEach((ingredient) => {
+    const listItem = document.createElement("li");
+    listItem.innerText = `${ingredient.quantity} of ${ingredient.name}`;
+    mealIngredients.appendChild(listItem);
+  });
+  console.log(ingredients);
   mealTitle.innerText = title;
   mealInstructions.innerText = instructions;
   mealThumb.setAttribute("src", thumb);
