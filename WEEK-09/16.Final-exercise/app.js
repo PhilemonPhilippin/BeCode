@@ -17,6 +17,7 @@ function updateSearchResultText(text) {
 }
 
 function updateGrid(meals) {
+  grid.innerHTML = "";
   meals.forEach((meal, index) => {
     const thumb = meal["strMealThumb"];
     let imageElem = document.createElement("img");
@@ -26,6 +27,10 @@ function updateGrid(meals) {
     div.classList.add("grid-item");
     div.appendChild(imageElem);
     grid.appendChild(div);
+    const title = meal["strMeal"];
+    let titleElem = document.createElement("h4");
+    titleElem.innerText = title;
+    div.appendChild(titleElem);
   });
 }
 

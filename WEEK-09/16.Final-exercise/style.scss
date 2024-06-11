@@ -100,13 +100,16 @@ main {
 }
 
 .grid-item {
-  width: 200px;
-  height: 200px;
+  @include flex(column);
+  @include flex-center-y();
+  max-width: 250px;
 }
 
 img {
   width: 100%;
   object-fit: cover;
+  max-width: 250px;
+  max-height: 250px;
 }
 
 footer {
@@ -115,7 +118,7 @@ footer {
 }
 
 footer h2 {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: white;
 }
