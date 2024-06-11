@@ -59,7 +59,10 @@ function openModal(meal) {
   const instructions = meal["strInstructions"];
   const ingredients = [];
   for (let i = 1; i <= 20; i++) {
-    if (meal[`strIngredient${i}`] === "") {
+    if (
+      meal[`strIngredient${i}`] === "" ||
+      meal[`strIngredient${i}`] === null
+    ) {
       break;
     } else {
       ingredients.push({

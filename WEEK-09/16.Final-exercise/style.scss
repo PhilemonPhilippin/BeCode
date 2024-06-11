@@ -90,7 +90,7 @@ main {
 }
 
 .modal {
-  height: 100%;
+  height: 100vh;
   position: fixed;
   top: 0;
   display: flex;
@@ -109,6 +109,10 @@ main {
 .modal .flex {
   display: flex;
   justify-content: flex-end;
+}
+
+.meal-card {
+  overflow-y: auto;
 }
 
 .meal-thumb {
@@ -135,7 +139,6 @@ main {
   color: #777;
   margin: 0.4rem 0 0.2rem;
   height: 200px;
-  overflow-y: auto;
 }
 
 .btn-close {
