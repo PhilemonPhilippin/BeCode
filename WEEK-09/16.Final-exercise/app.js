@@ -1,6 +1,22 @@
 const searchButton = document.querySelector(".btn-search");
 const grid = document.querySelector(".grid");
 const searchResultText = document.querySelector(".search-result-text");
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const closeModalBtn = document.querySelector(".btn-close");
+const mealTitle = document.querySelector(".meal-title");
+const mealInstructions = document.querySelector(".meal-instructions");
+const mealThumb = document.querySelector(".meal-thumb");
+
+closeModalBtn.addEventListener("click", () => {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+});
+
+overlay.addEventListener("click", () => {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+});
 
 searchButton.addEventListener("click", searchMeals);
 
@@ -32,7 +48,29 @@ function updateGrid(meals) {
     titleElem.classList.add("title");
     titleElem.innerText = title;
     div.appendChild(titleElem);
+    div.addEventListener("click", () => openModal(meal));
   });
+}
+
+function openModal(meal) {
+  const thumb = meal["strMealThumb"];
+  const title = meal["strMeal"];
+  const instructions = meal["strInstructions"];
+  const ingredients = [];
+  for (let i = 1; i <= 20; i++) {
+    if (meal[`strIngredient${i}`] === "") {
+      break;
+    } else {
+      ingredients.push([meal[`strIngredient${i}`], meal[`strMeasure${i}`]]);
+    }
+  }
+
+  mealTitle.innerText = title;
+  mealInstructions.innerText = instructions;
+  mealThumb.setAttribute("src", thumb);
+
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
 }
 
 async function getMeals(searchString) {

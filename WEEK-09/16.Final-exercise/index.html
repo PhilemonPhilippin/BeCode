@@ -22,7 +22,7 @@
         </p>
       </div>
       <div class="search">
-        <h2>Search</h3>
+        <h2>Search</h2>
         <div class="search-component">
           <input type="text" name="search" id="search" placeholder="Search.." />
           <button class="btn-search">
@@ -30,7 +30,18 @@
           </button>
         </div>
       </div>
-      <h2 class="search-result-text"></h3>
+      <h2 class="search-result-text"></h2>
+      <div class="modal hidden">
+        <div class="flex">
+          <button class="btn-close">X</button>
+        </div>
+        <div>
+          <img class="meal-thumb" />
+          <h2 class="meal-title">Modal</h2>
+          <p class="meal-instructions">Ici se trouvera mon modal</p>
+        </div>
+      </div>
+      <div class="overlay hidden"></div>
       <div class="grid"></div>
     </main>
     <footer>
