@@ -1,4 +1,5 @@
 const searchButton = document.querySelector(".btn-search");
+const searchInput = document.querySelector("#search");
 const grid = document.querySelector(".grid");
 const searchResultText = document.querySelector(".search-result-text");
 const modal = document.querySelector(".modal");
@@ -21,9 +22,14 @@ overlay.addEventListener("click", () => {
 
 searchButton.addEventListener("click", searchMeals);
 
+searchInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    searchMeals();
+  }
+});
+
 async function searchMeals() {
-  const input = document.querySelector("#search");
-  const searchString = input.value;
+  const searchString = searchInput.value;
   const response = await getMeals(searchString);
   updateGrid(response);
   updateSearchResultText(searchString);
@@ -42,14 +48,22 @@ function updateGrid(meals) {
     const div = document.createElement("div");
     div.classList.add(`grid-item-${index}`);
     div.classList.add("grid-item");
+
     div.appendChild(imageElem);
-    grid.appendChild(div);
     const title = meal["strMeal"];
     let titleElem = document.createElement("h4");
     titleElem.classList.add("title");
+    titleElem.classList.add("white-text");
     titleElem.innerText = title;
     div.appendChild(titleElem);
     div.addEventListener("click", () => openModal(meal));
+    div.addEventListener("mouseover", () => {
+      titleElem.style.color = "black";
+    });
+    div.addEventListener("mouseout", () => {
+      titleElem.style.color = "white";
+    });
+    grid.appendChild(div);
   });
 }
 
