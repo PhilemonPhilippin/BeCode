@@ -49,6 +49,9 @@ main {
   padding: 5px;
 }
 
+.search {
+  margin-bottom: 1rem;
+}
 .search h2 {
   font-size: 1.4rem;
 }
@@ -73,24 +76,51 @@ main {
 }
 
 .modal {
-  height: 100vh;
+  max-height: 95vh;
+  width: 50vw;
   position: fixed;
-  top: 0;
+  top: 2.5%;
+  overflow-y: auto;
+  z-index: 2;
+  border: 1px solid #a1b0ab;
+  border-radius: 15px;
+  background: #d5ecd4;
+  padding: 0.25rem 1rem;
+}
+.modal .modal-inside {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 8px;
-  width: 400px;
-  padding: 1rem;
-  border: 1px solid #a1b0ab;
-  border-radius: 15px;
-  z-index: 2;
-  overflow-y: initial;
-  background: #d5ecd4;
+  min-height: 100%;
 }
-.modal .flex {
+.modal .btn-close-container {
   display: flex;
   justify-content: flex-end;
+}
+.modal .btn-close-container .btn-close {
+  padding: 5px 8px 5px 8px;
+  background: #eee;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.modal .meal-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.modal .meal-card .meal-thumb {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 250px;
+  max-height: 250px;
+  border-radius: 15px;
+}
+.modal .meal-card .meal-ingredients {
+  font-size: 0.9rem;
+  padding: 15px;
+  list-style-type: square;
 }
 .modal h2 {
   font-size: 1.4rem;
@@ -98,30 +128,6 @@ main {
 .modal p {
   font-size: 0.9rem;
   margin: 0.4rem 0 0.2rem;
-  height: 200px;
-}
-
-.meal-card {
-  overflow-y: auto;
-}
-
-.meal-thumb {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.meal-ingredients {
-  font-size: 0.9rem;
-  padding: 15px;
-  list-style-type: square;
-}
-
-.btn-close {
-  padding: 5px 8px 5px 8px;
-  background: #eee;
-  border-radius: 7px;
-  cursor: pointer;
 }
 
 .overlay {
@@ -157,20 +163,22 @@ main {
   max-width: 250px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   background: #172a3a;
-  padding: 7px;
+  border-radius: 7px;
+}
+.grid-item .title {
+  padding: 5px;
+}
+.grid-item img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 250px;
+  max-height: 250px;
   border-radius: 7px;
 }
 
 .grid-item:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   background: #d5ecd4;
-}
-
-.grid .grid-item img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  max-width: 250px;
-  max-height: 250px;
 }
 
 footer {

@@ -65,7 +65,7 @@ function updateGrid(meals) {
     const titleElem = createTitle(meal["strMeal"]);
     gridItem.appendChild(titleElem);
 
-    addEvents(gridItem, meal);
+    addEvents(gridItem, meal, titleElem);
 
     grid.appendChild(gridItem);
   });
@@ -92,7 +92,7 @@ function createTitle(mealTitle) {
   return titleElem;
 }
 
-function addEvents(gridItem, meal) {
+function addEvents(gridItem, meal, titleElem) {
   gridItem.addEventListener("click", () => openModal(meal));
   gridItem.addEventListener("mouseover", () => {
     titleElem.style.color = "black";

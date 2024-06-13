@@ -68,6 +68,8 @@ main {
 }
 
 .search {
+  margin-bottom: 1rem;
+
   h2 {
     font-size: 1.4rem;
   }
@@ -96,24 +98,54 @@ main {
 }
 
 .modal {
-  height: 100vh;
+  max-height: 95vh;
+  width: 50vw;
   position: fixed;
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 8px;
-  width: 400px;
-  padding: 1rem;
+  top: 2.5%;
+  overflow-y: auto;
+  z-index: 2;
   border: 1px solid $grey-color;
   border-radius: 15px;
-  z-index: 2;
-  overflow-y: initial;
   background: $light-color;
+  padding: 0.25rem 1rem;
 
-  .flex {
+  .modal-inside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    // background: $light-color;
+    min-height: 100%;
+  }
+
+  .btn-close-container {
     display: flex;
     justify-content: flex-end;
+
+    .btn-close {
+      padding: 5px 8px 5px 8px;
+      background: #eee;
+      border-radius: 7px;
+      cursor: pointer;
+    }
+  }
+
+  .meal-card {
+    @include flex(column);
+    @include flex-center-both();
+
+    .meal-thumb {
+      object-fit: cover;
+      max-width: 250px;
+      max-height: 250px;
+      border-radius: 15px;
+    }
+
+    .meal-ingredients {
+      font-size: 0.9rem;
+      padding: 15px;
+      list-style-type: square;
+    }
   }
 
   h2 {
@@ -123,30 +155,7 @@ main {
   p {
     font-size: 0.9rem;
     margin: 0.4rem 0 0.2rem;
-    height: 200px;
   }
-}
-
-.meal-card {
-  overflow-y: auto;
-}
-
-.meal-thumb {
-  width: 100%;
-  object-fit: cover;
-}
-
-.meal-ingredients {
-  font-size: 0.9rem;
-  padding: 15px;
-  list-style-type: square;
-}
-
-.btn-close {
-  padding: 5px 8px 5px 8px;
-  background: #eee;
-  border-radius: 7px;
-  cursor: pointer;
 }
 
 .overlay {
@@ -180,19 +189,23 @@ main {
   max-width: 250px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   background: $dark-color;
-  padding: 7px;
   border-radius: 7px;
+
+  .title {
+    padding: 5px;
+  }
+
+  img {
+    object-fit: cover;
+    max-width: 250px;
+    max-height: 250px;
+    border-radius: 7px;
+  }
 }
 
 .grid-item:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   background: $light-color;
-}
-
-.grid .grid-item img {
-  object-fit: cover;
-  max-width: 250px;
-  max-height: 250px;
 }
 
 footer {
