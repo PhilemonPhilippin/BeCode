@@ -1,5 +1,4 @@
-BeCode exercices et projets
-===========================
+# BeCode exercices et projets
 
 ## Description
 
