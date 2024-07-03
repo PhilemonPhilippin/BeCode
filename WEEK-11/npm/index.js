@@ -6,7 +6,15 @@ const port = 3000;
 
 const options = {
   root: __dirname,
+  etag: false
 };
+
+app.use((req, res, next) => {
+  res.on("finish", () => {
+    console.log(req.method + " " + req.url + " " + res.statusCode);
+  });
+  next();
+});
 
 app.get("/", (req, res) => {
   res.sendFile("home.html", options);
