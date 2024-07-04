@@ -34,7 +34,6 @@ app.get("/add", (req, res) => {
 app.post("/add", (req, res) => {
   data.push(req.body);
   renderData.users = data;
-  console.log(data);
   res.redirect("/");
 });
 
