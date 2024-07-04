@@ -26,13 +26,34 @@ const posts = [
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
+  const htmlPageName = "index";
   const date = new Date();
   const hour = date.getHours();
   const minute = date.getMinutes();
   const time = `${hour}h${minute}`;
-  res.render("index", { time: time, posts: posts });
+  res.render(htmlPageName, {
+    time: time,
+    posts: posts,
+    title: upperCaseFirstLetter(htmlPageName),
+  });
+});
+
+app.get("/about", (req, res) => {
+  const htmlPageName = "about";
+
+  res.render("about", { title: upperCaseFirstLetter(htmlPageName) });
+});
+
+app.get("/contact", (req, res) => {
+  const htmlPageName = "contact";
+
+  res.render("contact", { title: upperCaseFirstLetter(htmlPageName) });
 });
 
 app.listen(port, () => {
   console.log(`Listening to port ${port}`);
 });
+
+function upperCaseFirstLetter(string) {
+  return string[0].toUpperCase() + string.slice(1);
+}
