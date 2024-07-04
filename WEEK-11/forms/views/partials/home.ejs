@@ -1,2 +1,14 @@
 <h2>Home</h2>
 <p>Hello and welcome !</p>
+<div class="link-to-add-page">
+  <a href="/add">Link to the page to add users</a>
+</div>
+<h3>Users list :</h3>
+<div class="users-container">
+  <% users.forEach((user) => { %>
+  <div class="user">
+    <h4><%=user.fname%> <%=user.lname%></h4>
+    <h5>Age: <%=user.age%> years old</h5>
+  </div>
+  <%})%> %>
+</div>
