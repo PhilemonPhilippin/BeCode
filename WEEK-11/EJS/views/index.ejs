@@ -8,5 +8,18 @@
   <body>
     <h1>Welcome!</h1>
     <h2>Its <%=time%></h2>
+    <div class="posts-container">
+      <% if(posts.length === 0) { %>
+      <div><p>no posts found</p></div>
+      <%} else { posts.forEach((post) => { %>
+
+      <div class="post">
+        <h3>Title : <%=post.title%></h3>
+        <p>Description : <%=post.description%></p>
+        <small>Author : <%=post.author%></small>
+      </div>
+
+      <%}) } %>
+    </div>
   </body>
 </html>
