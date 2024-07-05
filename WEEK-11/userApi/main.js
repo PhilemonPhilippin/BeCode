@@ -78,8 +78,8 @@ app.use(bodyParser.json());
 
 app.use(uriBase + "/:uid", (req, res, next) => {
   const uid = req.params.uid;
-  const userFetched = data.find((user) => user.id === uid);
-  if (userFetched === undefined) {
+  const idExist = data.some((user) => user.id === uid);
+  if (idExist === false) {
     res.statusCode = 404;
     res.send("Invalid id: user not found.");
   } else {
@@ -116,8 +116,7 @@ app.get(uriBase + "/:uid", (req, res) => {
 app.put(uriBase + "/:uid", validateApiKey, validate(schema), (req, res) => {
   const uid = req.params.uid;
   const userPut = req.body;
-  const userFetched = data.find((user) => user.id === uid);
-  const index = data.indexOf(userFetched);
+  const index = data.findIndex((user) => user.id === uid);
 
   const userToEdit = new User(
     uid,
@@ -134,8 +133,7 @@ app.put(uriBase + "/:uid", validateApiKey, validate(schema), (req, res) => {
 
 app.delete(uriBase + "/:uid", validateApiKey, (req, res) => {
   const uid = req.params.uid;
-  const userFetched = data.find((user) => user.id === uid);
-  const index = data.indexOf(userFetched);
+  const index = data.findIndex((user) => user.id === uid);
   data.splice(index, 1);
   res.sendStatus(204);
 });
