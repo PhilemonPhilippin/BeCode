@@ -104,6 +104,7 @@ app.post(uriBase, validateApiKey, validate(schema), (req, res) => {
   );
 
   data.push(userToAdd);
+  res.statusCode = 201;
   res.send(userToAdd);
 });
 
