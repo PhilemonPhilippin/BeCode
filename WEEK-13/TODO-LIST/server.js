@@ -3,6 +3,9 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
 
+const connectionString =
+  "mongodb+srv://pphilippin:c0bExMvby7dkvfqU@cluster0.wiidv5f.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+// const connectionString = "mongodb://localhost/todolistdb";
 const uriBase = "/api/todo";
 const todoSchema = new mongoose.Schema({
   text: { type: String, maxLength: 150, required: true },
@@ -22,7 +25,7 @@ main()
   .catch((err) => console.log(err));
 
 async function main() {
-  await mongoose.connect("mongodb://localhost/todolistdb");
+  await mongoose.connect(connectionString);
 }
 
 app.use(express.json());
