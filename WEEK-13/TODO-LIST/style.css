@@ -1,0 +1,8 @@
+a {
+  margin-left: 5px;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 3px;
+  border-radius: 5px;
+}

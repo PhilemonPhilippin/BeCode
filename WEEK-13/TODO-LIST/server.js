@@ -50,6 +50,17 @@ app.post(uriBase, async (req, res) => {
   }
 });
 
+app.delete(uriBase + "/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    await deleteById(id);
+    res.sendStatus(204);
+  } catch (err) {
+    console.log(err);
+    res.sendStatus(500);
+  }
+});
+
 async function retrieveAll() {
   try {
     const todos = await Todo.find().limit(20);
@@ -71,5 +82,12 @@ async function add(todo) {
   }
 }
 
-// createTodo().catch(err => console.log(err));
-// giveTodos().catch((err) => console.log(err));
+async function deleteById(id) {
+  try {
+    await Todo.findByIdAndDelete(id);
+    return true;
+  } catch (err) {
+    console.log(err);
+    return false;
+  }
+}

@@ -29,7 +29,11 @@ function refreshList(todos) {
   todoList.innerHTML = "";
   todos.forEach((todo) => {
     const listItem = document.createElement("li");
-    listItem.innerText = todo.text;
+    listItem.innerText = todo["text"];
+    const anchorDelete = document.createElement("a");
+    anchorDelete.innerText = "delete";
+    anchorDelete.addEventListener("click", async () => deleteTodo(todo["_id"]));
+    listItem.appendChild(anchorDelete);
     todoList.appendChild(listItem);
   });
 }
@@ -44,6 +48,16 @@ async function post() {
       },
     });
     responseObject = await response.json();
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+async function deleteTodo(id) {
+  try {
+    const response = await fetch(uriBase + "/" + id, {
+      method: "DELETE",
+    });
   } catch (err) {
     console.log(err);
   }
