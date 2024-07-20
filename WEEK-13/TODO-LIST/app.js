@@ -4,18 +4,29 @@ const btnSubmit = document.querySelector(".btn-submit");
 const inputText = document.getElementById("todo");
 const uriBase = "http://localhost:3000/api/todo";
 
-btnRefresh.addEventListener("click", async () => {
-  const todos = await getAll();
+setup();
+
+async function displayTodos() {
+  const todos = await getTodos();
   if (todos) {
     refreshList(todos);
   }
+}
+
+async function setup() {
+  await displayTodos();
+}
+
+btnRefresh.addEventListener("click", async () => {
+  await displayTodos();
 });
 
 btnSubmit.addEventListener("click", async () => {
-  await post();
+  await postToDo();
+  await displayTodos();
 });
 
-async function getAll() {
+async function getTodos() {
   try {
     const response = await fetch(uriBase);
     const json = await response.json();
@@ -32,13 +43,16 @@ function refreshList(todos) {
     listItem.innerText = todo["text"];
     const anchorDelete = document.createElement("a");
     anchorDelete.innerText = "delete";
-    anchorDelete.addEventListener("click", async () => deleteTodo(todo["_id"]));
+    anchorDelete.addEventListener("click", async () => {
+      await deleteTodo(todo["_id"]);
+      await displayTodos();
+    });
     listItem.appendChild(anchorDelete);
     todoList.appendChild(listItem);
   });
 }
 
-async function post() {
+async function postToDo() {
   try {
     const response = await fetch(uriBase, {
       method: "POST",
