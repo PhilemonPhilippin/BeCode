@@ -13,7 +13,6 @@ async function getAll() {
   try {
     const response = await fetch(uriBase);
     const json = await response.json();
-    console.log(json);
     return json;
   } catch (err) {
     console.log(err);

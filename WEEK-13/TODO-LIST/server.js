@@ -3,7 +3,10 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
 
-const todoSchema = mongoose.Schema({ text: String });
+const uriBase = "/api/todo";
+const todoSchema = new mongoose.Schema({
+  text: { type: String, maxLength: 150, required: true },
+});
 const Todo = mongoose.model("Todo", todoSchema);
 var corsOptions = {
   origin: "http://127.0.0.1:5500",
@@ -25,26 +28,47 @@ async function main() {
 app.use(express.json());
 app.use(cors(corsOptions));
 
-app.get("/api/todo", async (req, res) => {
+app.get(uriBase, async (req, res) => {
   try {
-    const todos = await getAll();
+    const todos = await retrieveAll();
     res.status(200).json(todos);
   } catch (err) {
     console.log(err);
+    res.sendStatus(500);
   }
 });
 
-async function getAll() {
-  const todos = await Todo.find().limit(20);
+app.post(uriBase, async (req, res) => {
+  try {
+    const todo = req.body;
+    const isAdded = await add(todo);
+    if (isAdded) res.sendStatus(204);
+    else res.sendStatus(400);
+  } catch (err) {
+    console.log(err);
+    res.sendStatus(500);
+  }
+});
 
-  console.log(todos);
-  return todos;
+async function retrieveAll() {
+  try {
+    const todos = await Todo.find().limit(20);
+    return todos;
+  } catch (err) {
+    console.log(err);
+    return;
+  }
 }
 
-async function createTodo() {
-  const drinkCoffee = new Todo({ text: "Drink a coffee." });
-
-  await drinkCoffee.save();
+async function add(todo) {
+  try {
+    const todoToAdd = await Todo.create({ text: todo.text });
+    await todoToAdd.save();
+    return true;
+  } catch (err) {
+    console.log(err);
+    return false;
+  }
 }
 
 // createTodo().catch(err => console.log(err));
