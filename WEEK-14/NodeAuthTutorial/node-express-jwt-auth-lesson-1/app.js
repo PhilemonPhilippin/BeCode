@@ -17,11 +17,7 @@ app.set("view engine", "ejs");
 const dbURI =
   "mongodb+srv://philemon:Test123@cluster0.wiidv5f.mongodb.net/node-auth?retryWrites=true&w=majority&appName=Cluster0";
 mongoose
-  .connect(dbURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-  })
+  .connect(dbURI)
   .then((result) =>
     app.listen(3000, () => {
       console.log("Listening to port 3000");
