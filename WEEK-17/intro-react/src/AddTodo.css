@@ -1,0 +1,12 @@
+.add-todo-container {
+    margin-left: 15px;
+    margin-bottom: 20px;
+}
+.input-add-todo-container {
+    margin-bottom: 10px;
+}
+
+.btn-add-todo-container button {
+    padding: 10px;
+    background: lightskyblue;
+}
