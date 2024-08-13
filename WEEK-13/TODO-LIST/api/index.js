@@ -12,13 +12,13 @@ const todoSchema = new mongoose.Schema({
 });
 const Todo = mongoose.model("Todo", todoSchema);
 var corsOptions = {
-  origin: "http://127.0.0.1:5500",
+  origin: "https://philemonphilippin.github.io",
   optionsSuccessStatus: 200,
 };
 
 main()
   .then(() => {
-    app.listen("3000", () => {
+    app.listen(3000, () => {
       console.log("App listening on port 3000.");
     });
   })
@@ -94,3 +94,5 @@ async function deleteById(id) {
     return false;
   }
 }
+
+module.exports = app;

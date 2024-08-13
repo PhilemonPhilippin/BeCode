@@ -1,18 +1,31 @@
+import React, { useState } from "react";
 import "./Todos.css";
 
 function Todos() {
+  const initialTodos = [
+    { text: "Learn React", checked: false },
+    { text: "Be Awesome!", checked: false },
+    { text: "And dont be lame.", checked: false },
+  ];
+  const [todos, setTodos] = useState(initialTodos);
+  const handleClick = (e) => {
+    e.target.setAttribute("checked", "");
+  }
+
   return (
     <div className="todos-container">
       <h3>Todos</h3>
       <div className="todos-list-container">
-        <div className="learn-react-container">
-          <input type="checkbox" id="learn-react" />
-          <label for="learn-react">Learn React</label>
-        </div>
-        <div className="be-awesome-container">
-          <input type="checkbox" id="be-awesome" />
-          <label for="be-awesome">Be Awesome!</label>
-        </div>
+        {todos.map((todo) => (
+          <div>
+            <input
+              type="checkbox"
+              id={`${todo.text}`}
+              onChange={handleClick}
+            />
+            <label for={`${todo.text}`}>{todo.text}</label>
+          </div>
+        ))}
       </div>
     </div>
   );
