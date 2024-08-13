@@ -1,0 +1,20 @@
+{
+  "name": "job_tracker",
+  "version": "1.0.0",
+  "description": "- Base de données MongoDb avec cloud Atlas et schéma mongoose\r - Serveur Express avec une API et un routing\r - Authentication: JWT dans le Backend\r - Cloudinary pour PDF et images\r - Front end: EJS, HTML JavaScript SCSS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "argon2": "^0.40.3",
+    "cloudinary": "^2.4.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.1",
+    "multer": "^1.4.5-lts.1"
+  }
+}
