@@ -1,12 +1,13 @@
 import "./AddTodo.css";
 import React, { useRef } from "react";
 
-function AddTodo() {
+function AddTodo({ sendTodoToParent }) {
   const inputRef = useRef();
 
   function clickHandler() {
     const inputElement = inputRef.current;
-    console.log(inputElement.value);
+    const todo = inputElement.value;
+    sendTodoToParent(todo);
   }
 
   return (
@@ -15,7 +16,7 @@ function AddTodo() {
         <input ref={inputRef} type="text" placeholder="Type a new todo" />
       </div>
       <div className="btn-add-todo-container">
-        <button onClick={clickHandler} >Add Todo</button>
+        <button onClick={clickHandler}>Add Todo</button>
       </div>
     </div>
   );

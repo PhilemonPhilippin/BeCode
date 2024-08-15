@@ -1,14 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Todos.css";
 
-function Todos() {
-  const initialTodos = [
-    { id: 1, text: "Learn React", checked: false },
-    { id: 2, text: "Be Awesome!", checked: false },
-    { id: 3, text: "And dont be lame.", checked: false },
-  ];
+function Todos({ addingTodo }) {
+  const [todos, setTodos] = useState([]);
+  const [idCounter, setIdCounter] = useState(1);
 
-  const [todos, setTodos] = useState(initialTodos);
+  useEffect(() => {
+    if (addingTodo) {
+      const newTodo = {
+        id: idCounter,
+        text: addingTodo,
+        checked: false,
+      };
+
+      setTodos((prevTodos) => [...prevTodos, newTodo]);
+      setIdCounter((prevId) => prevId + 1);
+    }
+  }, [addingTodo]);
 
   const handleClick = (e) => {
     const elemKey = parseInt(e.target.parentElement.getAttribute("data-key"));
@@ -27,12 +35,17 @@ function Todos() {
     <div className="todos-container">
       <h3>Todos</h3>
       <div className="todos-list-container">
-        {todos.map((todo) => (
-          <div key={todo.id} data-key={todo.id}>
-            <input type="checkbox" id={`${todo.text}`} onChange={handleClick} />
-            <label htmlFor={`${todo.text}`}>{todo.text}</label>
-          </div>
-        ))}
+        {todos &&
+          todos.map((todo) => (
+            <div key={todo.id} data-key={todo.id}>
+              <input
+                type="checkbox"
+                id={`${todo.text}`}
+                onChange={handleClick}
+              />
+              <label htmlFor={`${todo.text}`}>{todo.text}</label>
+            </div>
+          ))}
       </div>
     </div>
   );
