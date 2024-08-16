@@ -1,15 +1,16 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import EmojiList from "./components/EmojiList";
+import Search from "./components/Search";
 
 function App() {
   return (
-    <>
-      <h1>😎 EmojiSearch 😎</h1>
-      <EmojiList />
-    </>
+    <div className="app-container">
+      <div className="main-container">
+        <h1>😎 EmojiSearch 😎</h1>
+        <Search />
+        <EmojiList />
+      </div>
+    </div>
   );
 }
 

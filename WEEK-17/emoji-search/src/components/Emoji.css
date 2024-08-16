@@ -6,3 +6,7 @@
   justify-content: center;
   width: 75%;
 }
+
+.emoji-container span {
+  margin-right: 10px;
+}
