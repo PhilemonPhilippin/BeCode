@@ -27,6 +27,8 @@ const EmojiList = ({ keywords }) => {
       keywords = keywords.split(" ");
       const newEmojis = data.filter((emoji) => filterByEmoji(emoji, keywords));
       setEmojis(newEmojis);
+    } else {
+        setEmojis(data);
     }
   }, [keywords]);
 
