@@ -4,6 +4,17 @@ import "./Todos.css";
 function Todos({ addingTodo }) {
   const [todos, setTodos] = useState([]);
   const [idCounter, setIdCounter] = useState(1);
+  const LSKEY = "MyTodoApp";
+
+  useEffect(() => {
+    const localTodos = JSON.parse(
+      window.localStorage.getItem(LSKEY + ".todos")
+    );
+    if (localTodos && localTodos.length > 0) {
+      setTodos(localTodos);
+      setIdCounter(localTodos[localTodos.length - 1].id + 1);
+    }
+  }, []);
 
   useEffect(() => {
     if (addingTodo) {
@@ -12,6 +23,11 @@ function Todos({ addingTodo }) {
         text: addingTodo,
         checked: false,
       };
+
+      window.localStorage.setItem(
+        LSKEY + ".todos",
+        JSON.stringify([...todos, newTodo])
+      );
 
       setTodos((prevTodos) => [...prevTodos, newTodo]);
       setIdCounter((prevId) => prevId + 1);
