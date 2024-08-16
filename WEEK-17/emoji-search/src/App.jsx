@@ -7,7 +7,7 @@ import EmojiList from "./components/EmojiList";
 function App() {
   return (
     <>
-      <h1>EmojiSearch</h1>
+      <h1>😎 EmojiSearch 😎</h1>
       <EmojiList />
     </>
   );
