@@ -8,7 +8,7 @@ const cors = require("cors");
 const app = express();
 const port = 3000;
 const connectionString =
-  "mongodb+srv://philemon:Test123@cluster0.wiidv5f.mongodb.net/jobtracker?retryWrites=true&w=majority&appName=Cluster0";
+  "DBConnectionString[HERE]";
 
 const corsOptions = {
   origin: "https://philemonphilippin.github.io",

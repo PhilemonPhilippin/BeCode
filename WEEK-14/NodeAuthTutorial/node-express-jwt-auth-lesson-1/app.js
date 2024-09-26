@@ -16,7 +16,7 @@ app.set("view engine", "ejs");
 
 // database connection
 const dbURI =
-  "mongodb+srv://philemon:Test123@cluster0.wiidv5f.mongodb.net/node-auth?retryWrites=true&w=majority&appName=Cluster0";
+  "DBURI[HERE]";
 mongoose
   .connect(dbURI)
   .then((result) =>
